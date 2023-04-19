@@ -1,0 +1,134 @@
+/* z-index order */
+
+*{
+  box-sizing: border-box;
+  background-origin: border-box;
+  margin: 0;
+}
+
+/* Basis for colour palette comes from 1bit Monitor Glow Palette by Polyducks */
+/* https://lospec.com/palette-list/1bit-monitor-glow */
+/* you're welcome to change the colours if you want or any of the other general page style */
+:root{
+  --col-01:#222323;
+  --col-02:#f0f6f0;
+  --col-03:#5252ff;
+  --col-04:#b6e878;
+  --border: 1px solid var(--col-02);
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  background-color: var(--col-01);
+  color: var(--col-02);
+  padding: 2vw;
+  
+}
+
+/*
+  I've set up a basic flexbox for each recipe container - you might want to change some of the 
+  flex properties here on the container or on the individual flex items depending on how you want to style them
+*/
+
+/*
+I decided to add the Health category because I deemed it necessary to ehlp the potential user out if they really want to maintain a healthy diet.
+*/
+
+/*
+I also added the time it would take to cook each dish to help the user plan ahead for a day where they come home late from work and it's a bit late to take the time to cook a meal.
+*/
+
+/*
+The size category was added to ehlp them create leftovers for the Time category situations. This allows them to just simply heat up a meal through a qucik and easy process if they come home late.
+*/
+.RecipeBox{
+  display: flex;
+  flex-direction: column;
+  border: var(--border);
+}
+
+/*
+I chosen to put the dropdown options horizontally across the screen when the arrow is clicked to give it more distinction from the vertically listed dishes.
+*/
+.FilterSection{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  float: center;
+}
+
+/*
+I decided to get rid of the Dietry row because it seemed irrelevant and innacurate judging by the pictures of the dish. 
+*/
+.FilterBox{
+
+}
+
+.FilterButton{
+
+}
+
+.SelectedFilter{
+  color:red
+}
+
+.RecipeLink{
+
+}
+
+.RecipeName{
+
+}
+
+.Author{
+
+}
+
+.RecipeImageContainer{
+
+}
+
+.RecipeImg{
+
+}
+
+.Attribution{
+
+}
+
+.Publisher{
+
+}
+
+.Cuisine{
+
+}
+
+.TimeToCook{
+
+}
+
+/*
+The Skill Level section was also deemed to be irrelevant. The pictures seem to speak more words than the description.
+*/
+
+/*
+The Course section was also deemed unimportant due to the detail of the images. Some peole would just potentially cook the dishes at different times, even if some of them were aimed to be dinner dishes instead of lunch for example.
+*/
+.Servings{
+
+}
+
+.DatePublished{
+
+}
+
+.DateUpdated{
+
+}
+
+.SpecialEquipment{
+
+}
+

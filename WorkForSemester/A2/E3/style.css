@@ -1,0 +1,232 @@
+/*
+  This one CSS file is imported into both index.html AND hosono.html so you need to be careful that it 
+  works for both.
+*/
+
+*{
+  box-sizing: border-box;
+  background-origin: border-box;
+  margin: 0;
+}
+
+:root{
+  /* first two colours come from Kuroi's Manga Pallete Palette */
+  /* https://lospec.com/palette-list/manga-pallete */
+  --col-01:#171219;
+  --col-02:#f2fbeb;
+  --col-03:#5252ff;
+  --col-04:#b6e878;
+  font-size: 16px;
+  /* scroll behaviour makes the <a> links to ids scroll to position over time rather than immediately */
+  scroll-behavior: smooth;
+}
+
+body{
+  padding: 1rem;
+  background-color: var(--col-02);
+  color: var(--col-01);
+  transition: 20s;
+}
+
+nav {
+  margin-top: 1rem;
+}
+
+nav li{
+  font-size: 2rem;
+}
+/*I decided to make the nav li font bigger to make it stand out, because I thought it blended in too well with the rest and the user would not be able to tell if it was a navigational tool.*/
+section{
+  margin-bottom: 2rem;
+}
+
+h1{
+  font-size: 3rem;
+}
+
+h2{
+  font-size: 2rem;
+}
+
+p{
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+figcaption{
+  width: fit-content;
+}
+
+dl ul{
+  margin-bottom: 0;
+}
+
+li{
+  font-size: 1rem;
+}
+
+/*unvisited link */
+a:link {
+  color: #1351d8;
+}
+
+/*visited link */
+a:visited {
+  color:#03A062;
+}
+
+/*mouse over link */
+a:hover {
+  color:#ff2800;
+}
+
+/*selected link */
+a:active {
+  color:#F8F510;
+} 
+/*I decided to make these bigger-size words look more like links to different sections of the page,while giving them different colours depending on their status. I chose these colours because they go well together to determine the status of the page depending on user experience history.*/
+dd{
+  padding-left: 60px;
+}
+
+li ul{
+  padding-left: 40px;
+}
+
+.img-wrapper{
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.img-figure{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.article-img{
+  width: 80%;
+}
+
+.res-columns{
+  column-width: 25rem;
+}
+
+#mode-button{
+  float: right;
+  /* note the use of position: sticky to keep the button on the page even with scrolling */
+  position: sticky;
+  top: 1rem;
+}
+
+/* code for loading page */
+
+#load-body{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* changing button to look like a link */
+#load-link{
+  line-height: 1rem;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+#load-link:hover{
+  background-color: #8EB3D1;
+}
+
+/*I added this hover colour to show remind the user that they are hovering their cursor over the right link. The colour is ina light enough shade to avoid obsuring what they are hovering over in case of a sudden mind change.*/
+
+/* throbber while page is fake loading */
+#load-throbber{
+  /* the width, height and background-color give it a shape on the page without any content inside - 
+  these value are arbitrary, please change to create your own design  */
+  width: 25%;
+  height: 1rem;
+  animation: progress 10s infinite linear;
+  /* we also initially set display to none so it only shows once the link is clicked */
+  display: none;
+  background-image: linear-gradient(90deg, #C52443, #3863CD);
+  background-size: 25%;
+  animation-name: progress;
+  animation-duration: 10s;
+/*I decided to go for a linear gradient to give it more distinction from other websites and to potentially give designers inspiration for something. I also chose the two colours because they have good graphic design chemistry.*/
+}
+/*I decided to have a row of five bars expand out across the page as a unique touch on the loading bar animation. A different style rarely seen these days. This indicates to the user that the page will be expanding into a whole new website with just a click of their mouse.*/
+.progress{
+position: relative;
+}
+
+.progress .color{
+  position: absolute;
+  background-color: #C52443, #56305D, #050806, #56305D, #3863CD;
+  width: 25%;
+  height: 1rem;
+  animation: progress 10s infinite linear;
+}
+
+@keyframes progress{
+    0%{
+      width: 0%;
+      background-color: #C52443;
+    }
+    25%{
+        width: 50%;
+        background-color: #56305D;
+    }
+    50%{
+        width: 75%;
+        background-color: #050806;
+    }
+    75%{
+        width: 85%;
+        background-color: #56305D;
+    }
+    100%{
+        width: 100%;
+        background-color: #3863CD
+    }
+};
+
+
+
+
+/* Media Queries */
+
+/* medium devices 600 - 992 */
+@media only screen and (min-width: 600px) {
+  :root{
+    font-size: 20px;
+  }
+  
+  .img-wrapper{
+    width: 75%;
+    margin: 1.5rem auto;
+  }
+
+}
+
+/* medium devices 992 + */
+@media only screen and (min-width: 992px) {
+  :root{
+    font-size: 24px;
+  }
+
+  .img-wrapper{
+    max-width: fit-content;
+    float: right;
+    margin: 1.5rem;
+  }
+
+}
+
+@media (prefers-reduced-motion) {
+  :root{
+    scroll-behavior: auto;
+  }
+}

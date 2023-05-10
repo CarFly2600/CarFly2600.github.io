@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Player Experiment</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="playerControls.js" defer></script>
+<style>
+  @media only screen and (max-width:800px){
+    /*For Tablets:*/
+    .main{
+      width: 80%;
+      padding: 0;
+    }
+    .right {
+      width: 100%;
+    }
+  }
+
+  @media only screen and (max-width:500px){
+/*For Mobile Phones*/
+.menu, .main, .right{
+  width: 100%;
+}
+  }
+  /*I added a responsive function to allow this to be rsized across different devices*/
+  
+</style>
+  </head>
+
+  <body>
+
+    <!-- this element holds all of the media player -->
+    <div class="video-player-wrapper">
+      <!-- this element holds the video element and the overlay -->
+      <div class="video-element-wrapper">
+
+        <video id="videoElement" controls>
+          <source src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/miac.mp4" type="video/mp4">
+        </video>
+
+        <img id="videoPlayOverlay" src="./icons/play.svg">
+        <!--The colour of the background helps contrast the media player to direct the viewers attention to the pages true purpose.-->
+        <!--The size of the screen can be adjusted but will start small and alligned in the centre of the space for better user focus and to follow conventional webpage design-->
+      </div>
+      <!-- this element holds all of the custom controls -->
+      <div class="video-controls-wrapper" id="controlsWrapper">
+
+        <button class="video-control-button" id="playButton"></button>
+
+        <button class="video-control-button" id="muteButton"></button>
+
+        <progress class="video-progress-bar" id="progressBar" value="0"></progress>
+
+        <button class="video-control-button" id="fullScreenButton"></button>
+
+        <!--I put in the fullscreen option in case the viewer wants a better and closer view of what the video is showcasing to them. This is the most important feature because it gives a better picture of what the video is portraying to the view.er It's essential for best entertainment and understanding of what the viewer is supposed to see.-->
+
+      </div>
+
+    </div>
+
+  </body>
+
+</html>

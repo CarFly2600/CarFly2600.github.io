@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="./filter.js" defer></script>
+    <script src="./arrays-&-for-loops.js" defer></script>
+
+    
+
+    <title>Assignment 3</title>
+
+<p>I decided to create a webpage interaction design based around my aviation enthusiasm by listing specific planes from different manufacturers with varying size, range, passenger capacity and safety record. The webpage will use an experiment from one of the previous assignments because it had the same basic organisation ruleset and would be the easiest to complete in the given timeframe. At the top, the user of the project will have the ability to look into specific categories to search for the ideal airliner for their next flight as a quicker alternative than scrolling down through the page for several seconds.</p>
+
+<p>The Information Design principle worked best for my idea of how to implement my aviation enthusiasm into the interaction and it was the most practical out of all the given alternatives. But I also decided to give it a Playful abstract adjective to eliminate the possibility of boredom and usual old business mind setting when browsing through the webpage. This was also chosen to make it stand out among other potential sites designed for a similar purpose, and at least one of these sites have been found, but do not include as many aircraft as mine, giving more user choice.</p>
+
+<p>I decided to put in little animation bits to reflect the Playful adjective combining it with the combined colours from the logos of Boeing, Airbus, McDonnell Douglas and Lockheed respectively. This also helps to subtly reflect the history of aviation in some way. Some audio has also been put in to be played for users to know the noise they would be dealing with the respective airliners the noises belong to. The page is also designed to feature only the airliners which are still in production and/or development from their respective manufacturers. Sounds were from FreeSound and copyright via Wikipedia.</p>
+
+<p>The first thing users will see at the very top of the page will be a category list similar to Wikipedia, the list of categories will be vertical to stick with convention. This also allows them to act as buttons so that users can quickly filter and jump certain items on the list best suited for their purpose and avoid confusion. This is employing the Known-Item Seeking principle in UI Design because the user knows exactly what they are looking for and will be given multiple options for planes that fit certain filters depending on the users’ inputs or filters.</p>
+
+<p>This interaction pair will work well together to ensure that the user is presented with all the relevant information from their filters and for the respective task it needs the information for, while also giving a positive mindset while exploring the interaction to promote good concentration leading to better choices and no potential costly mistakes leading to economic or financial problems for anyone. If this project worked well in real life, this would be an ideal choice for the aforementioned clients to make the best choices with all necessary information to fly from where they are to where they’re needed.</p>
+
+    <style> 
+  div {
+  width: 100px;
+  height: 200px;
+  background-color: #1d2c73;
+  animation-name: example;
+  animation-duration: 4s;
+}
+/*The colours will transition in an animation to reflect the Playful adjective with the combined colours from Boeing, Airbus, McDonnell Douglas and Lockheed respectively.*/
+@keyframes example {
+  0%   {background-color: #0033A1;}
+  25%  {background-color: #00205B;}
+  50%  {background-color: #56305D;}
+  100% {background-color: #010101;}
+}
+      </style>
+
+  </head>
+
+  <body>
+
+    <div>Interactive Media 1 Assignment 3</div>
+
+    <hr /> 
+
+<!-- This category will show each of the featured plane manufacturers. The word inside each category button will be highlighted red when clicked on to tell the user which filtewr they have chosen from their respective categories. -->
+    <div class="FilterSection">     
+      <details class="FilterBox">
+        <summary>Manufacturer</summary>
+        <button class="FilterButton" onclick='filterCategory("A", this)'>Airbus</button>
+        <button class="FilterButton" onclick='filterCategory("B", this)'>Boeing</button>
+        <button class="FilterButton" onclick='filterCategory("EMB", this)'>Embraer</button>
+        <button class="FilterButton" onclick='filterCategory("ATR", this)'>ATR</button>
+        <button class="FilterButton" onclick='filterCategory("BMD", this)'>Bombardier</button>
+        <button class="FilterButton" onclick='filterCategory("CMC", this)'>Comac</button>
+      </details>
+    
+      <!-- This category will show the sixe of each plane. This will help cutomers decide which routes these planes could be suited for best. -->
+      
+      <details class="FilterBox">
+        <summary>Size</summary>
+        <button class="FilterButton" onclick='filterCategory("Small", this)'>Small</button>
+        <button class="FilterButton" onclick='filterCategory("Medium", this)'>Medium</button>
+        <button class="FilterButton" onclick='filterCategory("Big", this)'>Big</button>
+      </details>
+
+      <!-- This category will show the length of each plane to help ifendity how many passengers could be fitted in. -->
+       
+      <details class="FilterBox">
+        <summary>Range</summary>
+        <button class="FilterButton" onclick='filterCategory("Short", this)'>Short</button>
+        <button class="FilterButton" onclick='filterCategory("Medium", this)'>Medium</button>
+        <button class="FilterButton" onclick='filterCategory("Long", this)'>Long</button>
+      </details>
+
+        <!-- This category will show the plane safety record judging by the number of accidents that the respective planes have suffered since they were introduced. Bear in mind, most of these accidents are not attributed to the planes themselves -->
+      <details class="FilterBox">
+        <summary>Safety</summary>
+        <button class="FilterButton" onclick='filterCategory("Good", this)'>Good (-250 Accidents/Incidents)</button>
+        <button class="FilterButton" onclick='filterCategory("Medium", this)'>Medium (250-750 Accidents/Incidents)</button>
+        <button class="FilterButton" onclick='filterCategory("Bad", this)'>Bad (750-1000+ Accidents/Incidents)</button>
+      </details>
+
+    </div>
+
+    <hr /> 
+
+    <!-- Plane 1 -->
+    <div class="PlaneBox A Airbus Small Medium/Long Good">
+
+      <div class="PlaneLink">URL: https://en.wikipedia.org/wiki/Airbus_A220</div>
+
+      <div class="PlaneName">Name: A220</div>
+
+      <div class="Manufacturer">Manufacturer: Airbus</div>
+
+        <p class="Attribution">
+          <p><a href="https://commons.wikimedia.org/wiki/File:YL-CSD_Bombardier_BD-500-1A100_CS300_BCS3_Airbus_A220-300_A223_c_n_55006_-_BTI_(31100301167).jpg#/media/File:YL-CSD_Bombardier_BD-500-1A100_CS300_BCS3_Airbus_A220-300_A223_c_n_55006_-_BTI_(31100301167).jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/YL-CSD_Bombardier_BD-500-1A100_CS300_BCS3_Airbus_A220-300_A223_c_n_55006_-_BTI_%2831100301167%29.jpg/1200px-YL-CSD_Bombardier_BD-500-1A100_CS300_BCS3_Airbus_A220-300_A223_c_n_55006_-_BTI_%2831100301167%29.jpg" alt="YL-CSD Bombardier BD-500-1A100 CS300 BCS3 Airbus A220-300 A223 c n 55006 - BTI (31100301167).jpg"></a><br>By &lt;a rel="nofollow" class="external text" href="https://www.flickr.com/people/78631472@N03"&gt;Markus Eigenheer&lt;/a&gt; from Genève, Schweiz - &lt;a rel="nofollow" class="external text" href="https://www.flickr.com/photos/78631472@N03/31100301167/"&gt;YL-CSD Bombardier BD-500-1A100 CS300 BCS3 / Airbus A220-300 A223 c/n 55006 &amp;gt; BTI&lt;/a&gt;, <a href="https://creativecommons.org/licenses/by-sa/2.0" title="Creative Commons Attribution-Share Alike 2.0">CC BY-SA 2.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=75220125">Link</a></p>
+        </p>
+
+      </div>
+
+      <div class="Country">Country: European</div>
+
+      <div class="Size">Size: Small</div>
+
+      <div class="Range"> Range: Medium</div>
+
+      <div class="Safety"> Safety: Good</div>
+
+      <div class="Max Passenger Capacity"> Max Passenger Capacity: 160</div>
+
+    </div>
+    
+     <!-- Plane 2 -->
+     <div class="PlaneBox A Airbus Small Short/Medium Good">
+
+      <div class="PlaneLink">URL: https://en.wikipedia.org/wiki/Airbus_A320_family</div>
+
+      <div class="PlaneName">Name: A320 Family (A318/A319/A320/A321ceo/neo)</div>
+
+      <div class="Manufacturer">Manufacturer: Airbus</div>
+
+      <audio controls>
+        <source src="./audio/Airbus A320.wav" type="audio/wav">
+      Your browser does not support the audio element.
+      </audio>
+
+        <p class="Attribution">
+          <p><a href="https://commons.wikimedia.org/wiki/File:Jetstar_Airbus_A320_in_flight_(6768081241)_crop.jpg#/media/File:Jetstar_Airbus_A320_in_flight_(6768081241)_crop.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Jetstar_Airbus_A320_in_flight_%286768081241%29_crop.jpg/1200px-Jetstar_Airbus_A320_in_flight_%286768081241%29_crop.jpg" alt="Jetstar Airbus A320 in flight (6768081241) crop.jpg"></a><br>By Jetstar Airways (<a rel="nofollow" class="external text" href="http://www.jetstar.com">jetstar.com</a>), <a href="https://creativecommons.org/licenses/by-sa/2.0" title="Creative Commons Attribution-Share Alike 2.0">CC BY-SA 2.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=65524450">Link</a></p>
+
+          <p><a href="https://commons.wikimedia.org/wiki/File:IndiGo_Airbus_A320neo_F-WWDG_(to_VT-ITI)_(28915135713).jpg#/media/File:IndiGo_Airbus_A320neo_F-WWDG_(to_VT-ITI)_(28915135713).jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/IndiGo_Airbus_A320neo_F-WWDG_%28to_VT-ITI%29_%2828915135713%29.jpg/1200px-IndiGo_Airbus_A320neo_F-WWDG_%28to_VT-ITI%29_%2828915135713%29.jpg" alt="A twin-engined jet aircraft with distinctive winglets, in blue and white livery, against a blue sky"></a><br>By &lt;a rel="nofollow" class="external text" href="https://www.flickr.com/people/40563877@N00"&gt;BriYYZ&lt;/a&gt; from Toronto, Canada - &lt;a rel="nofollow" class="external text" href="https://www.flickr.com/photos/bribri/28915135713/"&gt;IndiGo Airbus A320neo F-WWDG (to VT-ITI)&lt;/a&gt;, <a href="https://creativecommons.org/licenses/by-sa/2.0" title="Creative Commons Attribution-Share Alike 2.0">CC BY-SA 2.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=51240604">Link</a></p>
+        </p>
+
+      </div>
+
+      <div class="Country">Country: European</div>
+      
+      <div class="Size">Size: Small</div>
+
+      <div class="Range">Range: Medium</div>
+
+      <div class="Safety">Safety: Good</div>
+
+      <div class="Max Passenger Capacity">Max Passenger Capacity: 132-230</div>
+
+    </div>
+
+    <!-- Plane 3 -->
+    <div class="PlaneBox A Airbus Medium Medium/Long Good">
+
+      <div class="PlaneLink">URL: https://en.wikipedia.org/wiki/Airbus_A330</div>
+
+      <div class="PlaneName">Name: A330</div>
+
+      <div class="Manufacturer">Manufacturer: Airbus</div>
+
+      <audio controls>
+        <source src="./audio/Airbus A330 4.wav" type="audio/wav">
+      Your browser does not support the audio element.
+      </audio>
+
+        <p class="Attribution">
+          <p><a href="https://commons.wikimedia.org/wiki/File:Turkish_Airlines,_Airbus_A330-300_TC-JNL_NRT_(23708073592).jpg#/media/File:Turkish_Airlines,_Airbus_A330-300_TC-JNL_NRT_(23708073592).jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Turkish_Airlines%2C_Airbus_A330-300_TC-JNL_NRT_%2823708073592%29.jpg/1200px-Turkish_Airlines%2C_Airbus_A330-300_TC-JNL_NRT_%2823708073592%29.jpg" alt="Turkish Airlines, Airbus A330-300 TC-JNL NRT (23708073592).jpg"></a><br>By &lt;a rel="nofollow" class="external text" href="https://www.flickr.com/people/129575161@N05"&gt;Masakatsu Ukon&lt;/a&gt; - &lt;a rel="nofollow" class="external text" href="https://www.flickr.com/photos/129575161@N05/23708073592/"&gt;Turkish Airlines, Airbus A330-300 TC-JNL NRT&lt;/a&gt;, <a href="https://creativecommons.org/licenses/by-sa/2.0" title="Creative Commons Attribution-Share Alike 2.0">CC BY-SA 2.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=45843051">Link</a></p>
+        
+          <p><a href="https://commons.wikimedia.org/wiki/File:Airbus_A330neo_F-WTTN_29.jpg#/media/File:Airbus_A330neo_F-WTTN_29.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Airbus_A330neo_F-WTTN_29.jpg/1200px-Airbus_A330neo_F-WTTN_29.jpg" alt="Airbus A330neo F-WTTN 29.jpg"></a><br>By &lt;a href="//commons.wikimedia.org/wiki/User:New_York-air" title="User:New York-air"&gt;New York-air&lt;/a&gt; - &lt;span class="int-own-work" lang="en"&gt;Own work&lt;/span&gt;, <a href="https://creativecommons.org/licenses/by-sa/4.0" title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=81292987">Link</a></p>
+      </div>
+
+      <div class="Country">Country: Eurpoean</div>
+      
+      <div class="Size">Size: Medium</div>
+
+      <div class="Range">Range: Medium-Long</div>
+
+      <div class="Safety">Safety: Good</div>
+
+      <div class="Max Passenger Capacity">Max Passenger Capacity: 440</div>
+
+    </div>
+
+    <!-- Plane 4 -->
+    <div class="PlaneBox A Airbus Medium Long Good">
+
+      <div class="PlaneLink">URL: https://en.wikipedia.org/wiki/Airbus_A350#</div>
+
+      <div class="PlaneName">Name: A350</div>
+
+      <div class="Manufacturer">Manufacturer: Airbus</div>
+
+        <p class="Attribution">
+          <p><a href="https://commons.wikimedia.org/wiki/File:Qatar_Airways_A350-941_(A7-ALA)_landing_at_Frankfurt_Airport.jpg#/media/File:Qatar_Airways_A350-941_(A7-ALA)_landing_at_Frankfurt_Airport.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Qatar_Airways_A350-941_%28A7-ALA%29_landing_at_Frankfurt_Airport.jpg/1200px-Qatar_Airways_A350-941_%28A7-ALA%29_landing_at_Frankfurt_Airport.jpg" alt="Qatar Airways A350-941 (A7-ALA) landing at Frankfurt Airport.jpg"></a><br>By <a rel="nofollow" class="external text" href="https://www.flickr.com/people/34153108@N06">Gerard van der Schaaf</a>, <a href="https://creativecommons.org/licenses/by/2.0" title="Creative Commons Attribution 2.0">CC BY 2.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=41495239">Link</a></p>
+        </p>
+
+      </div>
+
+      <div class="Country">Country: European</div>
+      
+      <div class="Size">Size: Medium</div>
+
+      <div class="Range">Range: Long</div>
+
+      <div class="Safety">Safety: Good</div>
+
+      <div class="Max Passenger Capacity">Max Passenger Capacity: 440-480</div>
+
+    </div>
+
+    <!-- Plane 5 -->
+    <div class="PlaneBox B Manufacturer Size Range Safety">
+
+      <div class="PlaneLink">URL: https://en.wikipedia.org/wiki/Boeing_737</div>
+
+      <div class="PlaneName">Name: 737 (MAX)</div>
+
+      <div class="Manufacturer">Manufacturer: Boeing</div>
+
+      <audio controls>
+        <source src="./audio/Boeing 737 2.wav" type="audio/wav">
+      Your browser does not support the audio element.
+      </audio>
+
+        <p class="Attribution">
+          <p><a href="https://commons.wikimedia.org/wiki/File:Ethiopian_Airlines_ET-AVJ_takeoff.jpg#/media/File:Ethiopian_Airlines_ET-AVJ_takeoff.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Ethiopian_Airlines_ET-AVJ_takeoff.jpg/1200px-Ethiopian_Airlines_ET-AVJ_takeoff.jpg" alt="Boeing 737 MAX of Ethiopian Airlines"></a><br>By &lt;a rel="nofollow" class="external text" href="https://www.flickr.com/people/36465337@N03"&gt;LLBG Spotter&lt;/a&gt; - &lt;a rel="nofollow" class="external text" href="https://www.flickr.com/photos/newfz28user/46461974574/"&gt;Ethiopian Airlines ET-AVJ takeoff from TLV&lt;/a&gt;, <a href="https://creativecommons.org/licenses/by-sa/2.0" title="Creative Commons Attribution-Share Alike 2.0">CC BY-SA 2.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=77388907">Link</a></p>
+        </p>
+
+      </div>
+
+      <div class="Country">Country: America</div>
+      
+      <div class="Size">Size: Small</div>
+
+      <div class="Range">Range: Short-Medium</div>
+
+      <div class="Safety">Safety: Medium</div>
+
+      <div class="Max Passenger Capacity">Max Passenger Capacity: 124-230</div>
+
+    </div>
+
+    <!-- Plane 6 -->
+    <div class="PlaneBox B Boeing Medium Medium-Long Safety">
+
+      <div class="PlaneLink">URL: https://en.wikipedia.org/wiki/Boeing_767#</div>
+
+      <div class="PlaneName">Name: 767</div>
+
+      <div class="Manufacturer">Manufacturer: Boeing</div>
+
+        <p class="Attribution">
+          <p><a href="https://commons.wikimedia.org/wiki/File:Delta_Air_Lines_B767-332_N130DL.jpg#/media/File:Delta_Air_Lines_B767-332_N130DL.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Delta_Air_Lines_B767-332_N130DL.jpg/1200px-Delta_Air_Lines_B767-332_N130DL.jpg" alt="A side/underneath view of a Boeing 767-300 in Delta Air Lines' white, blue, and red color during climbout. The main undercarriage doors are retracting."></a><br>By &lt;a href="//commons.wikimedia.org/wiki/File:Delta_Air_Lines_B767-300_N130DL.jpg" title="File:Delta Air Lines B767-300 N130DL.jpg"&gt;Delta_Air_Lines_B767-300_N130DL.jpg&lt;/a&gt;: &lt;a rel="nofollow" class="external text" href="https://www.flickr.com/people/38974417@N00"&gt;Richard Snyder&lt;/a&gt; from San Jose, CA, United States of America
+            derivative work: &lt;a href="//commons.wikimedia.org/wiki/User:Altair78" title="User:Altair78"&gt;Altair78&lt;/a&gt; (&lt;a href="//commons.wikimedia.org/wiki/User_talk:Altair78" title="User talk:Altair78"&gt;&lt;span class="signature-talk"&gt;talk&lt;/span&gt;&lt;/a&gt;) - &lt;a href="//commons.wikimedia.org/wiki/File:Delta_Air_Lines_B767-300_N130DL.jpg" title="File:Delta Air Lines B767-300 N130DL.jpg"&gt;Delta_Air_Lines_B767-300_N130DL.jpg&lt;/a&gt;, <a href="https://creativecommons.org/licenses/by-sa/2.0" title="Creative Commons Attribution-Share Alike 2.0">CC BY-SA 2.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=15999911">Link</a></p>
+        </p>
+
+      </div>
+
+      <div class="Country">Country: America</div>
+      
+      <div class="Size">Size: Medium</div>
+
+      <div class="Range">Range: Medium-Long</div>
+
+      <div class="Safety">Safety: Good</div>
+
+      <div class="Max Passenger Capacity">Max Passenger Capacity: 174-243</div>
+
+    </div>
+
+    <!-- Plane 7 -->
+    <div class="PlaneBox B Boeing Medium Long Good">
+
+      <div class="PlaneLink">URL: https://en.wikipedia.org/wiki/Boeing_777</div>
+
+      <div class="PlaneName">Name: 777</div>
+
+      <div class="Manufacturer">Manufacturer: Boeing</div>
+
+      <audio controls>
+        <source src="./audio/Boeing 777.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+      </audio>
+
+        <p class="Attribution">
+          <p><a href="https://commons.wikimedia.org/wiki/File:Cathay_Pacific_Boeing_777-200;_B-HNL@HKG.jpg#/media/File:Cathay_Pacific_Boeing_777-200;_B-HNL@HKG.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Cathay_Pacific_Boeing_777-200%3B_B-HNL%40HKG.jpg/1200px-Cathay_Pacific_Boeing_777-200%3B_B-HNL%40HKG.jpg" alt="Front quarter view of the first 777 built in flight wearing Cathay Pacific livery and with flaps partially extended and landing gear retracted."></a><br>By &lt;a rel="nofollow" class="external text" href="https://www.flickr.com/people/46423105@N03"&gt;Aero Icarus&lt;/a&gt; from Zürich, Switzerland - &lt;a rel="nofollow" class="external text" href="https://www.flickr.com/photos/46423105@N03/6052920447/"&gt;Cathay Pacific Boeing 777-200; B-HNL@HKG;31.07.2011/614sr&lt;/a&gt;
+            Uploaded by &lt;a href="//commons.wikimedia.org/wiki/User:Altair78" title="User:Altair78"&gt;Altair78&lt;/a&gt;, <a href="https://creativecommons.org/licenses/by-sa/2.0" title="Creative Commons Attribution-Share Alike 2.0">CC BY-SA 2.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=20139318">Link</a></p>
+
+            <p><a href="https://commons.wikimedia.org/wiki/File:777X_Roll-Out_(40407373023)_(cropped).jpg#/media/File:777X_Roll-Out_(40407373023)_(cropped).jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/777X_Roll-Out_%2840407373023%29_%28cropped%29.jpg/1200px-777X_Roll-Out_%2840407373023%29_%28cropped%29.jpg" alt="777X Roll-Out (40407373023) (cropped).jpg"></a><br>By &lt;a rel="nofollow" class="external text" href="https://www.flickr.com/people/29043563@N00"&gt;Dan Nevill&lt;/a&gt; from Seattle, WA, United States - &lt;a rel="nofollow" class="external text" href="https://www.flickr.com/photos/dnevill/40407373023/"&gt;20190313_034809&lt;/a&gt;, <a href="https://creativecommons.org/licenses/by/2.0" title="Creative Commons Attribution 2.0">CC BY 2.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=77436780">Link</a></p>
+        </p>
+
+      </div>
+
+      <div class="Country">Country: America</div>
+      
+      <div class="Size">Size: Medium</div>
+
+      <div class="Range">Range: Long</div>
+
+      <div class="Safety">Safety: Good</div>
+
+      <div class="Max Passenger Capacity">Max Passenger Capacity: 440-550</div>
+
+    </div>
+
+    <!-- Plane 8 -->
+    <div class="PlaneBox B Boeing Medium Long Good">
+
+      <div class="PlaneLink">URL: https://en.wikipedia.org/wiki/Boeing_787_Dreamliner</div>
+
+      <div class="PlaneName">Name: 787 Dreamliner</div>
+
+      <div class="Manufacturer">Manufacturer: Boeing</div>
+
+        <p class="Attribution">
+          <p><a href="https://commons.wikimedia.org/wiki/File:Boeing_787_N1015B_ANA_Airlines_(27611880663)_(cropped).jpg#/media/File:Boeing_787_N1015B_ANA_Airlines_(27611880663)_(cropped).jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Boeing_787_N1015B_ANA_Airlines_%2827611880663%29_%28cropped%29.jpg/1200px-Boeing_787_N1015B_ANA_Airlines_%2827611880663%29_%28cropped%29.jpg" alt="Boeing 787 N1015B ANA Airlines (27611880663) (cropped).jpg"></a><br>By &lt;a rel="nofollow" class="external text" href="https://www.flickr.com/people/31699813@N00"&gt;pjs2005&lt;/a&gt; from Hampshire, UK - &lt;a rel="nofollow" class="external text" href="https://www.flickr.com/photos/boropjs/27611880663/"&gt;Boeing 787 N1015B ANA Airlines&lt;/a&gt;, <a href="https://creativecommons.org/licenses/by-sa/2.0" title="Creative Commons Attribution-Share Alike 2.0">CC BY-SA 2.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=71147495">Link</a></p>
+        </p>
+
+      </div>
+
+      <div class="Country">Country: America</div>
+      
+      <div class="Size">Size: Medium</div>
+
+      <div class="Range">Range: Long</div>
+
+      <div class="Safety">Safety: Good</div>
+
+      <div class="Max Passenger Capacity">Max Passenger Capacity: 381-440</div>
+
+    </div>
+
+    <!-- Plane 9 -->
+    <div class="PlaneBox EMB Embraer Small Short-Medium Good">
+
+      <div class="PlaneLink">URL: https://en.wikipedia.org/wiki/Embraer_E-Jet_family</div>
+
+      <div class="PlaneName">Name: E-Jet Family (E170/E175/E190/E195)</div>
+
+      <div class="Manufacturer">Manufacturer: Embraer</div>
+
+        <p class="Attribution">
+          <p><a href="https://commons.wikimedia.org/wiki/File:N247JB_KJFK_(37103752403).jpg#/media/File:N247JB_KJFK_(37103752403).jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/N247JB_KJFK_%2837103752403%29.jpg/1200px-N247JB_KJFK_%2837103752403%29.jpg" alt="N247JB KJFK (37103752403).jpg"></a><br>By &lt;a rel="nofollow" class="external text" href="https://www.flickr.com/people/80441498@N00"&gt;Venkat Mangudi&lt;/a&gt; - &lt;a rel="nofollow" class="external text" href="https://www.flickr.com/photos/venkatmangudi/37103752403/"&gt;N247JB_KJFK&lt;/a&gt;, <a href="https://creativecommons.org/licenses/by-sa/2.0" title="Creative Commons Attribution-Share Alike 2.0">CC BY-SA 2.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=63456629">Link</a></p>
+        </p>
+
+      </div>
+
+      <div class="Country">Country: Brazil</div>
+      
+      <div class="Size">Size: Small</div>
+
+      <div class="Range">Range: Short-Medium</div>
+
+      <div class="Safety">Safety: Good</div>
+
+      <div class="Max Passenger Capacity">Max Passenger Capacity: 72-116</div>
+
+    </div>
+
+    <!-- Plane 10 -->
+    <div class="PlaneBox EMB Embraer Small Short-Medium Good">
+
+      <div class="PlaneLink">URL: https://en.wikipedia.org/wiki/Embraer_E-Jet_E2_family</div>
+
+      <div class="PlaneName">Name: E-Jet E2 Family (E175-E2/E190-E2/E195-E2)</div>
+
+      <div class="Manufacturer">Manufacturer: Embraer</div>
+
+        <p class="Attribution">
+          <p><a href="https://commons.wikimedia.org/wiki/File:Wider%C3%B8e,_LN-WEA,_Embraer_E190-E2_@_HEL.jpg#/media/File:Widerøe,_LN-WEA,_Embraer_E190-E2_@_HEL.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Wider%C3%B8e%2C_LN-WEA%2C_Embraer_E190-E2_%40_HEL.jpg/1200px-Wider%C3%B8e%2C_LN-WEA%2C_Embraer_E190-E2_%40_HEL.jpg" alt="Widerøe, LN-WEA, Embraer E190-E2 @ HEL.jpg"></a><br>By &lt;a rel="nofollow" class="external text" href="https://www.flickr.com/people/76908380@N04"&gt;Valentin Hintikka&lt;/a&gt; from Finland - &lt;a rel="nofollow" class="external text" href="https://www.flickr.com/photos/valentinhintikka/42406043714/"&gt;LN-WEA Widerøe E190-E2 @ HEL&lt;/a&gt;, <a href="https://creativecommons.org/licenses/by/2.0" title="Creative Commons Attribution 2.0">CC BY 2.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=70434112">Link</a></p>
+        </p>
+
+      </div>
+
+      <div class="Country">Country: Embraer</div>
+      
+      <div class="Size">Size: Small</div>
+
+      <div class="Range">Range: Short</div>
+
+      <div class="Safety">Safety: Good</div>
+
+      <div class="Max Passenger Capacity">Max Passenger Capacity: 88-132</div>
+
+    </div>
+
+    <!-- Plane 11 -->
+    <div class="PlaneBox ATR ATR Small Short Good">
+
+      <div class="PlaneLink">URL: https://en.wikipedia.org/wiki/ATR_42</div>
+
+      <div class="PlaneName">Name: 42</div>
+
+      <div class="Manufacturer">Manufacturer: ATR</div>
+
+      <audio controls>
+        <source src="./audio/ATR 42-500.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+      </audio>
+
+        <p class="Attribution">
+          <p><a href="https://commons.wikimedia.org/wiki/File:ATR_42-500_Hop!_(HOP)_F-GPYK_-_MSN_537_(10276128103).jpg#/media/File:ATR_42-500_Hop!_(HOP)_F-GPYK_-_MSN_537_(10276128103).jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/ATR_42-500_Hop%21_%28HOP%29_F-GPYK_-_MSN_537_%2810276128103%29.jpg/1200px-ATR_42-500_Hop%21_%28HOP%29_F-GPYK_-_MSN_537_%2810276128103%29.jpg" alt="ATR 42-500 Hop! (HOP) F-GPYK - MSN 537 (10276128103).jpg"></a><br>By &lt;a rel="nofollow" class="external text" href="https://www.flickr.com/people/30949611@N03"&gt;Laurent ERRERA&lt;/a&gt; from L'Union, France - &lt;a rel="nofollow" class="external text" href="https://www.flickr.com/photos/30949611@N03/10276128103/"&gt;ATR 42-500 Hop! (HOP) F-GPYK - MSN 537&lt;/a&gt;, <a href="https://creativecommons.org/licenses/by-sa/2.0" title="Creative Commons Attribution-Share Alike 2.0">CC BY-SA 2.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=29838266">Link</a></p>
+        </p>
+
+      </div>
+
+      <div class="Country">Country: France/Italy</div>
+      
+      <div class="Size">Size: Small</div>
+
+      <div class="Range">Range: Short</div>
+
+      <div class="Safety">Safety: Good</div>
+
+      <div class="Max Passenger Capacity">Max Passenger Capacity: 48</div>
+
+    </div>
+
+    <!-- Plane 12 -->
+    <div class="PlaneBox ATR ATR Small Short Good">
+
+      <div class="PlaneLink">URL: https://en.wikipedia.org/wiki/ATR_72</div>
+
+      <div class="PlaneName">Name: 72</div>
+
+      <div class="Manufacturer">Manufacturer: ATR</div>
+
+      <audio controls>
+        <source src="./audio/ATR 72.wav" type="audio/wav">
+      Your browser does not support the audio element.
+      </audio>
+
+        <p class="Attribution">
+          <p><a href="https://commons.wikimedia.org/wiki/File:F-WWEZ_(948)_ATR.72-212A(500)_FlyFireFly_TLS_30AUG11_(6097869500)_(cropped).jpg#/media/File:F-WWEZ_(948)_ATR.72-212A(500)_FlyFireFly_TLS_30AUG11_(6097869500)_(cropped).jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/F-WWEZ_%28948%29_ATR.72-212A%28500%29_FlyFireFly_TLS_30AUG11_%286097869500%29_%28cropped%29.jpg/1200px-F-WWEZ_%28948%29_ATR.72-212A%28500%29_FlyFireFly_TLS_30AUG11_%286097869500%29_%28cropped%29.jpg" alt="F-WWEZ (948) ATR.72-212A(500) FlyFireFly TLS 30AUG11 (6097869500) (cropped).jpg"></a><br>By Ken Fielding/<a rel="nofollow" class="external free" href="https://www.flickr.com/photos/kenfielding">https://www.flickr.com/photos/kenfielding</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=56449395">Link</a></p>
+        </p>
+
+      </div>
+
+      <div class="Country">Country: France/Italy</div>
+      
+      <div class="Size">Size: Small</div>
+
+      <div class="Range">Range: Short</div>
+
+      <div class="Safety">Safety: Good</div>
+
+      <div class="Max Passenger Capacity">Max Passenger Capacity: 72</div>
+
+    </div>
+
+    <!-- Plane 13 -->
+    <div class="PlaneBox BMD Bombardier Small Short Good">
+
+      <div class="PlaneLink">URL: https://en.wikipedia.org/wiki/De_Havilland_Canada_Dash_8</div>
+
+      <div class="PlaneName">Name: Dash 8 Q-Series</div>
+
+      <div class="Manufacturer">Manufacturer: Bombardier</div>
+
+      <audio controls>
+        <source src="./audio/Bombardier Dash 8 Q-300.wav" type="audio/wav">
+      Your browser does not support the audio element.
+      </audio>
+
+        <p class="Attribution">
+          <p><a href="https://commons.wikimedia.org/wiki/File:Airberlin_Q400_(cropped).jpg#/media/File:Airberlin_Q400_(cropped).jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Airberlin_Q400_%28cropped%29.jpg/1200px-Airberlin_Q400_%28cropped%29.jpg" alt="Airberlin Q400 (cropped).jpg"></a><br>By &lt;a href="//commons.wikimedia.org/w/index.php?title=User:Airberlin&amp;amp;action=edit&amp;amp;redlink=1" class="new" title="User:Airberlin (page does not exist)"&gt;Online-Redaktion, Air Berlin PLC &amp;amp; Co. Luftverkehrs KG&lt;/a&gt; - &lt;a rel="nofollow" class="external text" href="http://www.airberlin.de"&gt;Air Berlin&lt;/a&gt;, <a href="https://creativecommons.org/licenses/by-sa/3.0" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=74599324">Link</a></p>
+        </p>
+
+      </div>
+
+      <div class="Country">Country: Canada </div>
+      
+      <div class="Size">Size: Small</div>
+
+      <div class="Range">Range: Short</div>
+
+      <div class="Safety">Safety: Good</div>
+
+      <div class="Max Passenger Capacity">Max Passenger Capacity: 37-82</div>
+
+    </div>
+
+    <!-- Plane 14 -->
+    <div class="PlaneBox CMC Comac Small Short Good">
+
+      <div class="PlaneLink">URL: https://en.wikipedia.org/wiki/Comac_ARJ21</div>
+
+      <div class="PlaneName">Name: ARJ21 Xiangfeng</div>
+
+      <div class="Manufacturer">Manufacturer: Comac</div>
+
+        <p class="Attribution">
+          <p><a href="https://commons.wikimedia.org/wiki/File:Chengdu_Airlines_COMAC_ARJ21-700_Xiangfeng.jpg#/media/File:Chengdu_Airlines_COMAC_ARJ21-700_Xiangfeng.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Chengdu_Airlines_COMAC_ARJ21-700_Xiangfeng.jpg" alt="Chengdu Airlines COMAC ARJ21-700 Xiangfeng.jpg"></a><br>By Danny Yu - &lt;a rel="nofollow" class="external free" href="http://www.airliners.net/photo/Chengdu-Airlines/COMAC-ARJ21-700-Xiangfeng/2542783/L/"&gt;http://www.airliners.net/photo/Chengdu-Airlines/COMAC-ARJ21-700-Xiangfeng/2542783/L/&lt;/a&gt;, <a href="https://creativecommons.org/licenses/by-sa/4.0" title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=36928397">Link</a></p>
+        </p>
+
+      </div>
+
+      <div class="Country">Country: China </div>
+      
+      <div class="Size">Size: Small</div>
+
+      <div class="Range">Range: Short</div>
+
+      <div class="Safety">Safety: Good</div>
+
+      <div class="Max Passenger Capacity">Max Passenger Capacity: 90-105</div>
+
+    </div>
+
+    <!-- Plane 15 -->
+    <div class="PlaneBox CMC Comac Small Short-Medium Good">
+
+      <div class="PlaneLink">URL: https://en.wikipedia.org/wiki/Comac_C919</div>
+
+      <div class="PlaneName">Name: C919</div>
+
+      <div class="Manufacturer">Manufacturer: Comac</div>
+
+        <p class="Attribution">
+          <p><a href="https://commons.wikimedia.org/wiki/File:COMAC_B-001A_May_2017.jpg#/media/File:COMAC_B-001A_May_2017.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/8/8b/COMAC_B-001A_May_2017.jpg" alt="COMAC B-001A May 2017.jpg"></a><br>By Weimeng at &lt;a rel="nofollow" class="external text" href="http://www.airliners.net/user/wm2008/profile/photos"&gt;www.airliners.net&lt;/a&gt; - &lt;a rel="nofollow" class="external free" href="http://www.airliners.net/photo/COMAC-Commercial-Aircraft-Corporation-Of-China/COMAC-C919/4362053"&gt;http://www.airliners.net/photo/COMAC-Commercial-Aircraft-Corporation-Of-China/COMAC-C919/4362053&lt;/a&gt;, <a href="https://creativecommons.org/licenses/by-sa/4.0" title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=61287391">Link</a></p>
+        </p>
+
+      </div>
+
+      <div class="Country">Country: China </div>
+      
+      <div class="Size">Size: Small</div>
+
+      <div class="Range">Range: Short-Medium</div>
+
+      <div class="Safety">Safety: Good</div>
+
+      <div class="Max Passenger Capacity">Max Passenger Capacity: 158-174</div>
+
+    </div>
+
+    </section>
+
+  </body>
+
+</html>

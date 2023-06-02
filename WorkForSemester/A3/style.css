@@ -1,0 +1,75 @@
+/* z-index order */
+
+*{
+  box-sizing: border-box;
+  background-origin: border-box;
+  margin: 0;
+}
+
+/* Basis for colour palette comes from 1bit Monitor Glow Palette by Polyducks */
+/* https://lospec.com/palette-list/1bit-monitor-glow */
+/* you're welcome to change the colours if you want or any of the other general page style */
+/* These colours are from the manufacturers of the planes featured on the main webpage. */
+:root{
+  --col-01:#00205B;
+  --col-02:#0033A1;
+  --col-03:#0067B1;
+  --col-04:#EB280F;
+  --col-05:#231F20;
+  --col-06:#408664;
+  --col-07:#000000;
+  --col-08:#FFFFFF;
+  --border: 1px solid var(--col-06);
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  background-color: var(--col-07);
+  color: var(--col-08);
+  padding: 2vw;
+  
+}
+
+/*
+  I've set up a basic flexbox for each aircraft container. 
+*/
+
+/*
+I decided to add the Safety Record category because I deemed it nice to have in case there are any nervous fliers in the world who are particularly strict on safety.
+*/
+
+/*
+I added the Size, Range and Maximuim Passenger Capacity categories as well because airlines and customers alike might need to know what type of aircraft they are looking for to make a worth-while purchase and avoid a costly mistake resulting in potential financial difficulty. 
+*/
+
+.PlaneBox{
+  display: flex;
+  flex-direction: column;
+  border: var(--border);
+}
+
+/*
+I chosen to put the dropdown options vertically towards the left of the screen when the arrow is clicked to avoid cluster encountered during development and to eliminate confusion for the user potentially clicking on the wrong item in the wrong category.
+*/
+.FilterSection{
+  display: flex;
+  flex-direction:column;
+  text-align:left;
+  float: center;
+}
+
+.FilterButton{
+
+}
+
+/*
+I modified the food images section and replaced them all with images of different airliners made by different manufacturers. 
+I also made the filter a distinguishable colour to make sure the user knows what filter is selected. 
+*/
+
+.SelectedFilter{
+  color: #FF0000
+}
+
+
